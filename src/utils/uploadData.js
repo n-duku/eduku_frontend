@@ -9,7 +9,7 @@ export async function handleBulkSave (data, isContestant, quiz_id) {
         })
         try {
             if(participants.length > 0){
-                await axios.post('https://quizmasterbackend.netlify.app/api/v1/contestants', participants, {headers: {'Authorization': sessionStorage.getItem('token')}})
+                await axios.post('http://localhost:3001/api/v1/contestants', participants, {headers: {'Authorization': sessionStorage.getItem('token')}})
             }
         } catch (err) {
             console.error(err);
@@ -27,7 +27,7 @@ export async function handleBulkSave (data, isContestant, quiz_id) {
         })
         try {
             if(questionStream.length > 0){
-                await axios.post('https://quizmasterbackend.netlify.app/api/v1/question', questionStream, {headers: {'Authorization': sessionStorage.getItem('token')}})
+                await axios.post('http://localhost:3001/api/v1/question', questionStream, {headers: {'Authorization': sessionStorage.getItem('token')}})
             }
         } catch (err) {
             console.error(err);

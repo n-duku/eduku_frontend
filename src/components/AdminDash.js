@@ -23,6 +23,9 @@ class AdminDash extends Component {
         this.fetchQuizMasters();
     }
 
+    componentDidUpdate(){
+        this.fetchQuizMasters();
+    }
     
 
     async fetchQuizMasters(){
@@ -41,7 +44,6 @@ class AdminDash extends Component {
 
     async handleFormSubmit(e){
         e.preventDefault();
-        e.target.reset();
         if(this.state.username && this.state.password){
             let users ={
                 username: this.state.username,
@@ -65,6 +67,7 @@ class AdminDash extends Component {
                 //flash error here
                 console.log('Check for valid data')
             }
+            e.target.reset();
     }
 
     handlePasswordGenerator(){

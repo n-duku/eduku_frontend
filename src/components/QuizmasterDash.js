@@ -8,6 +8,7 @@ class QuizmasterDash extends Component {
     constructor(){
         super();
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.fetchQuizzes = this.fetchQuizzes.bind(this);
         this.updateState = this.updateState.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleTextArea = this.handleTextArea.bind(this);
