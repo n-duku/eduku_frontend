@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import QuizData from './QuizData';
 import UserForm from './UserForm';
 import {handleBulkSave} from '../utils/uploadData'
+import questions_upload from '../questions_upload.png'
+
 
 class QuizmasterDash extends Component {
     constructor(){
@@ -23,6 +25,10 @@ class QuizmasterDash extends Component {
 
 
     componentDidMount(){
+        this.fetchQuizzes();
+    }
+
+    componentDidUpdate(){
         this.fetchQuizzes();
     }
 
@@ -123,6 +129,15 @@ class QuizmasterDash extends Component {
                                     })}
                                 </tbody>
                             </table>
+                        </div>
+                        <div style={{marginTop: '32px'}}>
+                            <h5>Key</h5>
+                            <ul style={{fontSize: '14px', width: '300px', listStyle: 'inside'}}>
+                                <li>All uploads are in .xlsx or .csv format</li>
+                                <li>Contestants should be typed in one column</li>
+                                <li>Question upload should follow: </li>
+                                <img src={questions_upload} alt='question upload example' style={{width: '600px'}}/>
+                            </ul>
                         </div>
                     </div>
                     <div className='content-form'>

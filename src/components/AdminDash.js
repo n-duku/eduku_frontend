@@ -70,8 +70,10 @@ class AdminDash extends Component {
             e.target.reset();
     }
 
-    handlePasswordGenerator(){
+    handlePasswordGenerator(e){
+        e.preventDefault();
         this.setState({
+            ...this.state,
             password: generatePassword()
         })
     }
@@ -117,10 +119,10 @@ class AdminDash extends Component {
                     <div className='content-form'>
                         <div>
                             <h4>Add Quizmasters</h4>
-                            <form onSubmit={this.handleFormSubmit} >
-                                <div>
+                            <form onSubmit={this.handleFormSubmit} style={{height: '200px', paddingLeft:'20px'}}>
+                                <div style={{display: 'flex', flexDirection: 'column'}}>
                                     <label htmlFor="name">Name: </label>
-                                    <input type='text' id='name' value={this.state.username} onChange={this.handleInput} required />
+                                    <input type='text' id='name' value={this.state.username} onChange={this.handleInput} required style={{width: 'max-content'}}/>
                                 </div>
                                 <div>
                                     <label htmlFor="password">Password: </label>
@@ -129,7 +131,7 @@ class AdminDash extends Component {
                                 <div>
                                     <button onClick={this.handlePasswordGenerator}>Generate</button>
                                 </div>
-                                <button className='add-quizmaster'>Add Quizmaster</button>
+                                <button className='add-quizmaster'>Add </button>
                             </form>
                         </div>
                     </div>

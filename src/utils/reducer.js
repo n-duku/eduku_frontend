@@ -2,7 +2,8 @@ const initialState = {
     isAuthenticated: false,
     user_id: '',
     username: '',
-    isAdmin: false
+    isAdmin: false,
+    questions: []
 
 }
 
@@ -20,6 +21,12 @@ const Reducer =(state = initialState, action)=>{
                 user_id: action.payload.user_id,
                 username: action.payload.username,
                 isAdmin: action.payload.isAdmin
+            }
+
+        case 'SETQUESTIONS':
+            return {
+                ...state,
+                questions: state.questions.concat(action.payload)
             }
 
         default:
